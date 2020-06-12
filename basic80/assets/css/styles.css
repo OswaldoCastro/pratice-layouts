@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #979797;
+  background-color: #FFF;
+}
+
+#layout {
+  width: 960px;
+  margin: auto;
+}
+
+a {
+  color: #979797;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+}
+
+#title h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+#title h2 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.title-h5 {
+  font-size: 16px;
+}
+
+nav {
+  float: right;
+  display: flex;
+  align-items: center;
+  height: 7em;
+  margin-left: auto;
+}
+
+nav ul li {
+  display: inline;
+  text-transform: uppercase;
+}
+
+.link {
+  margin: 0;
+  padding: 0 10px;
+  color: #979797;
+  list-style-type: none;
+}
+
+.link:hover {
+  color: rgb(247, 163, 9);
+}
+
+.link-category {
+  margin: 0;
+  color: #979797;
+}
+
+.link-category:hover {
+  color: rgb(247, 163, 9);
+}
+
+.link-contrast {
+  color: rgb(247, 163, 9);
+}
+
+.read-more {
+  text-align: right;
+}
+
+#banner img {
+  width: 960px;
+  height: 360px;
+  background-color: #f1f1f1;
+  display: block;
+}
+
+#content {
+  padding: 30px 0;
+  line-height: 1.6em;
+}
+
+#center {
+  padding: 10px 0;
+  width: 700px;
+  float: left;
+}
+
+.content-center {
+  width: 300px;
+  margin-right: 40px;
+  float: left;
+}
+
+.content-center img {
+  width: 80px;
+  height: 80px;
+  background-color: #f1f1f1;
+  float: left;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+#content-right {
+  float: right;
+  width: 230px;
+  padding: 10px 0;
+}
+
+#content-right ul {
+  display: inline;
+}
+
+#content-right ul li {
+  padding: 10px 0;
+  border-bottom: 1px dotted #000;
+  list-style-image: url('../img/orange_file.gif');
+}
+
+#content-right p {
+  margin: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+footer {
+  padding: 20px 0;
+}
+
+#copyright {
+  float: left;
+}
+
+#sign {
+  float: right;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+}
