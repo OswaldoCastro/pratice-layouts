@@ -3,4 +3,4 @@ BASEADO NO SITE [OS TEMPLATES](https://www.os-templates.com/free-basic-html5-tem
 
 # PREVIEW
 
-https://htmlpreview.github.io/?https://github.com/OswaldoCastro/practice-layouts/blob/master/basic80/index.html
+Acesse o [link](https://htmlpreview.github.io/?https://github.com/OswaldoCastro/practice-layouts/blob/master/basic80/index.html) para visualizar. **CTRL + Botão esquerdo do mouse** abre em uma nova aba.
