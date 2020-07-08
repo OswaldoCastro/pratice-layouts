@@ -1,3 +1,3 @@
 # SOBRE
 
-Projeto que guarda os layouts em que pratico HTML+CSS.
+Cada pasta é um projeto único, com suas referências e inspirações. A intenção é guardar um histórico da minha prática com HTML+CSS+JS.
