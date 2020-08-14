@@ -1,0 +1,573 @@
+:root {
+  --black: #000;
+  --white: #FFF;
+  --background-primary: #e6ecf0;
+  --text-color-primary: #667580;
+  --lightblue: #3bb9e3;
+  --input-background: #f5f8fa;
+  --input-border-color: #e6dcf0;
+  --box-shadow: rgba(0, 0, 0, 0.25);
+  --user-name-text: #1f2226;
+  --user-at-text: #53626c;
+  --user-info-text: #657786;
+  --followers-background: #d0d5d9;
+  --widget-follow-text: #222;
+  --widget-follow-at-text: #9a9a9a;
+  --widget-follow-close-button: #ccd6dd;
+  --timeline-text: #1f2326;
+  --timeline-tweet-at-text: #788b9a;
+  --timeline-tweet-text: #7b8b9a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  color: var(--black);
+  
+  background: var(--background-primary);
+
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+input, button {
+  outline: 0;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 0 3rem;
+  
+  max-width: 1280px;
+}
+
+header#main-header {
+  position: relative;
+  
+  height: 3rem;
+  z-index: 1;
+ 
+  background: var(--white);
+  
+  box-shadow: 0 1px 1px var(--box-shadow);
+}
+
+header#main-header .content {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header#main-header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header#main-header nav ul li {
+  margin-right: 2rem;
+  
+  display: flex;
+  align-items: center;
+
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--text-color-primary);
+}
+
+header#main-header nav ul li img {
+  margin-right: 0.5rem;
+}
+
+header#main-header div.side-header {
+  display: flex;
+  align-items: center;
+}
+
+header#main-header div.side-header input {
+  border: 1px solid var(--input-border-color);
+  border-radius: 1rem;
+
+  padding: 0 2rem 0 1.2rem;
+
+  width: 12rem;
+  height: 2rem;
+
+  font-weight: 400;
+  font-size: 0.8rem;
+
+  background: 
+    var(--input-background) 
+    url('../images/search.svg') 
+    no-repeat 
+    10rem 
+    center;
+}
+
+header#main-header div.side-header img {
+  margin: 0 1.5rem;
+  border-radius: 50%;
+
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+header#main-header div.side-header button {
+  border: 0;
+  border-radius: 1rem;
+  
+  width: 5rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: var(--white);
+
+  background: var(--lightblue);
+}
+
+div.banner {
+  width: 100%;
+  height: 25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: var(--white);
+
+  background: var(--lightblue);
+}
+
+div.bar {
+  height: 3rem;
+
+  background: var(--white);
+  
+  box-shadow: 0 1px 3px var(--box-shadow);
+}
+
+div.bar .content {
+  padding-left: 20rem;
+
+  height: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.bar .content ul {
+  height: 100%;
+
+  display: flex;
+  
+  list-style: none;
+}
+
+div.bar .content ul li {
+  position: relative;
+  padding: 0.3rem;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.bar .content ul li.active strong {
+  color: var(--lightblue);
+}
+
+/*
+Estilizando o <li>, antes de fechar </li> é adicionado um elemento
+com o ::after
+<li>... ::after</li>
+*/
+div.bar .content ul li.active::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+
+  width: 100%;
+  height: 0.2rem;
+  
+  background: var(--lightblue);
+}
+
+div.bar .content ul li span {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--text-color-primary);
+}
+
+div.bar .content ul li strong {
+  margin-top: 0.2rem;
+
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--text-color-primary);
+}
+
+div.bar .content .actions {
+  display: flex;
+}
+
+div.bar .content .actions button {
+  margin-right: 1.5rem;
+  border: 1px solid var(--lightblue);
+  border-radius: 1rem;
+  
+  width: 5rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: var(--lightblue);
+
+  background: var(--white);
+}
+
+div.wrapper-content {
+  display: flex;
+}
+
+div.wrapper-content aside.profile {
+  width: 16.5rem;
+}
+
+div.wrapper-content aside.profile img.avatar {
+  margin-top: -6.5rem;
+  border-radius: 50%;
+  border: 0.3rem solid var(--white);
+
+  width: 10rem;
+  height: 10rem;
+}
+
+div.wrapper-content aside.profile h1 {
+  margin-top: 1rem;
+
+  font-size: 1.5rem;
+  color: var(--user-name-text);
+}
+
+div.wrapper-content aside.profile span {
+  font-size: 1rem;
+  color: var(--user-at-text);
+}
+
+div.wrapper-content aside.profile p {
+  margin-top: 1.5rem;
+
+  font-size: 1rem;
+  color: var(--user-name-text);
+}
+
+div.wrapper-content aside.profile ul {
+  margin-top: 1.5rem;
+
+  list-style: none;
+}
+
+div.wrapper-content aside.profile ul li {
+  display: flex;
+  align-items: center;
+
+  line-height: 1.5rem;
+
+  font-size: 1rem;
+  color: var(--user-info-text);
+}
+
+div.wrapper-content aside.profile ul li img {
+  margin-right: 0.5rem;
+
+  width: 1rem;
+  height: 1rem;
+}
+
+div.wrapper-content aside.profile .widget {
+  margin-top: 1.5rem;
+}
+
+div.wrapper-content aside.profile .widget strong {
+  display: flex;
+  align-items: center;
+
+  font-weight: normal;
+  font-size: 1rem;
+  color: var(--lightblue);
+}
+
+div.wrapper-content aside.profile .widget strong img {
+  margin-right: 0.5rem;
+
+  width: 1rem;
+  height: 1rem;
+}
+
+div.wrapper-content aside.profile .followers ul {
+  display: flex;
+  flex-flow: row wrap;
+
+  list-style: none;
+}
+
+div.wrapper-content aside.profile .followers ul li {
+  margin: 0 0.3rem 0.3rem 0;
+  border-radius: 50%;
+
+  width: 3rem;
+  height: 3rem;
+
+  background: var(--followers-background);
+}
+
+div.wrapper-content aside.profile .images ul {
+  display: flex;
+  flex-flow: row wrap;
+
+  list-style: none;
+}
+
+div.wrapper-content aside.profile .images ul li {
+  margin: 0 0.3rem 0.3rem 0;
+  border-radius: 0.3rem;
+
+  width: 5rem;
+  height: 5rem;
+
+  background: var(--followers-background);
+}
+
+div.wrapper-content .timeline {
+  margin: 0.5rem 1rem 0;
+  border-radius: 0.5rem;
+
+  flex: 1;
+  
+  background: var(--white);
+}
+
+div.wrapper-content .timeline nav {
+  border-bottom: 1px solid var(--input-border-color);
+  padding: 0.5rem 1rem;
+}
+
+div.wrapper-content .timeline nav a {
+  margin-left: 1rem;
+
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--lightblue);
+}
+
+div.wrapper-content .timeline nav a:first-child {
+  margin: 0;
+}
+
+div.wrapper-content .timeline nav a.active {
+  color: var(--user-name-text);
+}
+
+div.wrapper-content .timeline ul.tweets {
+  list-style: none;
+}
+
+div.wrapper-content .timeline ul.tweets li {
+  border-bottom: 1px solid var(--input-border-color);
+  padding: 0.5rem 1rem;
+
+  display: flex;
+}
+
+div.wrapper-content .timeline ul.tweets li > img {
+  border-radius: 50%;
+
+  width: 3rem;
+  height: 3rem;
+}
+
+div.wrapper-content .timeline ul.tweets li .info {
+  margin-left: 1rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+div.wrapper-content .timeline ul.tweets li .info strong {
+  font-size: 1rem;
+  color: var(--timeline-text);
+}
+
+div.wrapper-content .timeline ul.tweets li .info strong span {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: var(--timeline-tweet-at-text);
+}
+
+div.wrapper-content .timeline ul.tweets li .info p {
+  margin-top: 0.2rem;
+  
+  font-size: 0.9rem;
+  color: var(--timeline-text);
+}
+
+div.wrapper-content .timeline ul.tweets li .actions {
+  margin-top: 1rem;
+  display: flex;
+}
+
+div.wrapper-content .timeline ul.tweets li .actions a {
+  margin-left: 1rem;
+
+  display: flex;
+  align-items: center;
+  
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--text-color-primary);
+}
+
+div.wrapper-content .timeline ul.tweets li .actions a:first-child {
+  margin-left: 0;
+}
+
+div.wrapper-content .timeline ul.tweets li .actions a img {
+  margin-right: 0.2rem;
+}
+
+div.wrapper-content aside.widgets {
+  margin-top: 0.5rem;
+  
+  width: 16rem;
+}
+
+div.wrapper-content aside.widgets .widget {
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  background: var(--white);
+}
+
+div.wrapper-content aside.widgets .widget .title {
+  display: flex;
+  align-items: baseline;
+}
+
+div.wrapper-content aside.widgets .widget .title strong {
+  font-size: 1rem;
+  color: var(--user-name-text);
+}
+
+div.wrapper-content aside.widgets .widget .title a {
+  position: relative;
+  padding-left: 0.6rem;
+
+  font-size: 0.75rem;
+  color: var(--lightblue);
+
+  text-decoration: none;
+}
+
+div.wrapper-content aside.widgets .widget .title a::before {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.0125rem;
+  margin: 0 0.3rem;
+  border-radius: 50%;
+  content: '';
+
+  width: 0.2rem;
+  height: 0.2rem;
+
+  background: var(--widget-follow-text);
+}
+
+div.wrapper-content aside.widgets .follow ul {
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+}
+
+div.wrapper-content aside.widgets .follow ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile {
+  display: flex;
+  align-items: center;
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile img {
+  border-radius: 50%;
+
+  width: 3rem;
+  height: 3rem;
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile .info {
+  margin-left: 0.2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile .info strong {
+  font-size: 1rem;
+  color: var(--user-name-text);
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile .info strong span {
+  font-weight: normal;
+  color: var(--widget-follow-at-text);
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile .info button {
+  margin-top: 0.1rem;
+  margin-right: 1.5rem;
+  border: 1px solid var(--lightblue);
+  border-radius: 1rem;
+  
+  width: 5rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: var(--lightblue);
+
+  background: var(--white);
+}
+
+div.wrapper-content aside.widgets .follow ul li > a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--widget-follow-close-button);
+}
